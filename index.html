@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+
+    <title>Burger Menu Animation</title>
+</head>
+
+<body>
+    <div id="app">
+        <!-- 將 Vue 的 Component 註冊到 App 根-->
+        <burger></burger>
+    </div>
+
+    <template id="burger">
+        <div id="burger" :class="{'active' : isOpen}" @click.prevent="toggle">
+            <slot>
+                <button type="button" class="burger-button" title="menuu">
+                    <span class="hidden">Toggle menu</span>
+                    <span class="burger-bar burger-bar-1"></span>
+                    <span class="burger-bar burger-bar-2"></span>
+                    <span class="burger-bar burger-bar-3"></span>
+                </button>
+            </slot>
+        </div>
+    </template>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
